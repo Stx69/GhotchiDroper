@@ -1,25 +1,52 @@
 <html>
 
-
 <head>
 	<meta charset="utf-8" />
-	<title>Rejoice Sounds</title>
-	
-	<button id="Run" onclick="timer()">Play</button>
+	<title>Ghotchi Droper</title>
+	<label for="DropTimer">Drop Timer:</label>
+	<input type="button" id="mixBut" value="Start" />
 
 	<script>
-		function timer () {
-			if (temp = null){
-				let temp = false;
-			}
-			temp = !temp;
+		var mixBut = document.getElementById("mixBut");
+		var myInterval;
+		var time;
 
-			if (temp = true) {playSound () ;};
+		const waitUntil = (condition) => {
+    return new Promise((resolve) => {
+        let interval = setInterval(() => {
+            if (!condition()) {
+                return
+            }
 
+            clearInterval(interval)
+            resolve()
+        }, 100)
+    })
+}
 
-		}
+mixBut.addEventListener("click", Start);
 
-		function playSound () {new Audio("Dong.mp3").play()};
+async function Start(){
+    console.log("Started");
+    mixBut.removeEventListener("click", Start);
+    mixBut.addEventListener("click", Stop);
+    mixBut.value = "Stop";
+	await waitUntil(() => new Date().getSeconds() >= 58)
+	console.log("interval set");
+	playSound();
+	myInterval = setInterval(() => {
+	playSound();	
+	}, 60000);	
+}
+
+function Stop(){
+    console.log("Stopped");
+    mixBut.removeEventListener("click", Stop);
+    mixBut.addEventListener("click", Start);
+    mixBut.value = "Start";
+	window.clearInterval(myInterval);
+}
+function playSound () {new Audio("Dong.mp3").play()};
 
 	</script>
 
@@ -28,7 +55,7 @@
 <body>
 
 
-	<div id="gameDiv"></div>
+	<div id="GhotchiDroper"></div>
 </body>
 
 </html>
