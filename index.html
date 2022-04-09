@@ -33,10 +33,7 @@ async function Start(){
     mixBut.value = "Stop";
 	await waitUntil(() => new Date().getSeconds() >= 58)
 	console.log("interval set");
-	playSound();
-	myInterval = setInterval(() => {	
-	playSound();
-	}, 59500);	
+	playSound();	
 }
 
 function Stop(){
