@@ -2,7 +2,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Gotchi Droper</title>
+	<title>Ghotchi Droper</title>
 	<label for="DropTimer">Drop Timer:</label>
 	<input type="button" id="mixBut" value="Start" />
 
@@ -33,7 +33,10 @@ async function Start(){
     mixBut.value = "Stop";
 	await waitUntil(() => new Date().getSeconds() >= 58)
 	console.log("interval set");
-	playSound();	
+	playSound();
+	myInterval = setInterval(() => {	
+	playSound();
+	}, 59000);	
 }
 
 function Stop(){
@@ -48,7 +51,7 @@ async function playSound () {
 	new Audio("Dong.mp3").play()};
 	myInterval = setInterval(() => {	
 	playSound();
-	}, 59500);
+	}, 59000);
 	</script>
 
 </head>
