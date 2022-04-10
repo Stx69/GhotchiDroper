@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="style.css"/>
     <link rel="shortcut icon" type="image/jpg" href="aavegotchi.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   
+    <style>
+      body {
+        background-image: url('Drop.jpg');
+      }
+      </style>
     <div class="headerTop">
       <h1>Welcome,</h1>
       <h1>Gotchi volunteer...</h1>
@@ -18,6 +22,11 @@
 	<label for="DropTimer">Drop Timer:</label>
 	<input type="button" id="mixBut" value="Start" />
 
+  <br>
+
+  <iframe width="420" height="315" src="https://www.youtube.com/watch?v=PtgZT-dVERI" frameborder="0"
+  allowfullscreen>
+</iframe>
 	<script>
 		var mixBut = document.getElementById("mixBut");
 		var myInterval;
@@ -78,7 +87,7 @@ async function playSound () {
     <img class="tip-button" id="tip-button" title="DONATE ME!!!" src="Donate.png" alt="Metamask tip button" >
     <h3>
       DONATE!!! THANK YOU AT ADVANCE!!! MORE WILL COME!!!
-      Secret for automove with mouse:
+     <p> Secret for automove with mouse:
       Hold left button of mouse and click on rigth button of mouse. Later click with left button on top of window of browser. 
      Now you can lead Gotchi movement by mouse and if  Dong come be ready for drop by press keyboard movements key.. Later just move with mouse to continue automove.
      
@@ -89,7 +98,7 @@ async function playSound () {
       Preffered solution - run clone of repo by github as local deploy in Visual Studio Code (F5)
      
      
-     Good Farming times!
+     Good Farming times! </p>
     </span>
     <p>Your address: <span class="showAccount" id="showAccount"></p>
     <p>My address: <span class="showMy" id="showMy"></span></p>
@@ -128,11 +137,11 @@ async function playSound () {
     var amount = '0x' + (2000000000000000).toString(16);
   }
 
-  else if (curretChain !== chainMatic ){
+  if (curretChain !== chainMatic ){
     var amount = '0x' + (200000000000000000).toString(16);
   }
   
-  else if (curretChain !== chainETH ){
+  if (curretChain !== chainETH ){
   var amount = '0x' + (1000000000000000000).toString(16);
   }
   
