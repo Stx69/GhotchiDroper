@@ -130,15 +130,15 @@ async function playSound () {
   const chainXdai = '100';
   const chainMatic = '137';
   if (curretChain === chainXdai ){
-    var amount = '0x' + (2000000000000000).toString(16);
+    var amount = '0x' + (2000000000000000000).toString(16);
   }
 
   if (curretChain === chainMatic ){
-    var amount = '0x' + (200000000000000000).toString(16);
+    var amount = '0x' + (2000000000000000000).toString(16);
   }
   
   if (curretChain === chainETH ){
-  var amount = '0x' + (1000000000000000000).toString(16);
+  var amount = '0x' + (100000000000000000).toString(16);
   }
   
   const transactionHash = await ethereum.request({
