@@ -49,6 +49,7 @@ function Stop(){
 async function playSound () {
 	await waitUntil(() => new Date().getSeconds() >= 58)
 	new Audio("Dong.mp3").play()};
+	window.clearInterval(myInterval);
 	myInterval = setInterval(() => {	
 	playSound();
 	}, 59000);
