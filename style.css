@@ -1,0 +1,21 @@
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tip-button {
+    width:23px;
+    min-height:23px;
+    min-width:23px;
+    cursor:pointer;
+  }
+
+  h3 {
+    color: rgb(54, 182, 43);
+    font-size: smaller;
+    bottom: auto;
+  }
+  
