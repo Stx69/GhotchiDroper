@@ -114,7 +114,7 @@ if (mixBut.value === "Stop"){
 	new Audio("Rooster Crow.mp3").play();
   Audio.volume = 0.5;
   }
-
+  await new Promise(r => setTimeout(r, 2000));
   special();
 
 }
