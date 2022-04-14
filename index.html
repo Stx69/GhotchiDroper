@@ -98,21 +98,21 @@ if (mixBut.value === "Stop"){
   await waitUntil(() => new Date().getMinutes() === 19)
   await waitUntil(() => new Date().getSeconds() === 54)
 	new Audio("Rooster Crow.mp3").play();
-  audio.volume = 0.5;
+  Audio.volume = 0.5;
   }
   
-  if (new Date().getMinutes() > 20 && new Date().getMinutes() <= 39){
+  if (new Date().getMinutes() >= 20 && new Date().getMinutes() <= 39){
   await waitUntil(() => new Date().getMinutes() === 39)
   await waitUntil(() => new Date().getSeconds() === 54)
 	new Audio("Rooster Crow.mp3").play();
-  audio.volume = 0.5;
+  Audio.volume = 0.5;
   }
 
   if (new Date().getMinutes() > 40 && new Date().getMinutes() <= 59){
   await waitUntil(() => new Date().getMinutes() === 59)
   await waitUntil(() => new Date().getSeconds() === 54)
 	new Audio("Rooster Crow.mp3").play();
-  audio.volume = 0.5;
+  Audio.volume = 0.5;
   }
 
   special();
