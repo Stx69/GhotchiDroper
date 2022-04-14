@@ -53,7 +53,7 @@ async function Start(){
     mixBut.addEventListener("click", Stop);
     mixBut.value = "Stop";
     special();
-	await waitUntil(() => new Date().getSeconds() === 29)
+	await waitUntil(() => new Date().getSeconds() === 28)
 	console.log("interval set");
   window.clearInterval(myInterval);
 	window.clearInterval(myInterval2);
@@ -72,7 +72,7 @@ function Stop(){
 	window.clearInterval(myInterval2);
 }
 async function playSound () {
-	await waitUntil(() => new Date().getSeconds() >= 59)
+	await waitUntil(() => new Date().getSeconds() === 58)
 	new Audio("Dong.mp3").play();
   window.clearInterval(myInterval);
 	window.clearInterval(myInterval2);
@@ -82,7 +82,7 @@ async function playSound () {
   };
   
 async function playSound2() {
-	await waitUntil(() => new Date().getSeconds() >= 29)
+	await waitUntil(() => new Date().getSeconds() === 28)
 	new Audio("Dong.mp3").play();
   window.clearInterval(myInterval);
   window.clearInterval(myInterval2);
@@ -97,22 +97,22 @@ if (mixBut.value === "Stop"){
   if (new Date().getMinutes() <= 19){
   await waitUntil(() => new Date().getMinutes() === 19)
   await waitUntil(() => new Date().getSeconds() === 54)
-	new Audio("Rooster Crow.mp3").play();
-  Audio.volume = 0.5;
+	let eventAudio= new Audio("Rooster Crow.mp3").play();
+  eventAudio.volume = 0.5;
   }
   
   if (new Date().getMinutes() >= 20 && new Date().getMinutes() <= 39){
   await waitUntil(() => new Date().getMinutes() === 39)
   await waitUntil(() => new Date().getSeconds() === 54)
-	new Audio("Rooster Crow.mp3").play();
-  Audio.volume = 0.5;
+	let eventAudio= new Audio("Rooster Crow.mp3").play();
+  eventAudio.volume = 0.5;
   }
 
-  if (new Date().getMinutes() > 40 && new Date().getMinutes() <= 59){
+  if (new Date().getMinutes() > 0 && new Date().getMinutes() <= 59){
   await waitUntil(() => new Date().getMinutes() === 59)
   await waitUntil(() => new Date().getSeconds() === 54)
-	new Audio("Rooster Crow.mp3").play();
-  Audio.volume = 0.5;
+	let eventAudio= new Audio("Rooster Crow.mp3").play();
+  eventAudio.volume = 0.5;
   }
   await new Promise(r => setTimeout(r, 2000));
   special();
