@@ -27,6 +27,7 @@
 		var mixBut = document.getElementById("mixBut");
 		var myInterval;
     var myInterval2;
+    var myInterval3;
 		var time;
 
 		const waitUntil = (condition) => {
@@ -44,11 +45,14 @@
 
 mixBut.addEventListener("click", Start);
 
+
+
 async function Start(){
     console.log("Started");
     mixBut.removeEventListener("click", Start);
     mixBut.addEventListener("click", Stop);
     mixBut.value = "Stop";
+    special();
 	await waitUntil(() => new Date().getSeconds() === 29)
 	console.log("interval set");
   window.clearInterval(myInterval);
@@ -87,6 +91,34 @@ async function playSound2() {
 	}, 28000);
 };
 	
+
+async function special(){
+if (mixBut.value === "Stop"){
+  if (new Date().getMinutes() <= 19){
+  await waitUntil(() => new Date().getMinutes() === 19)
+  await waitUntil(() => new Date().getSeconds() === 54)
+	new Audio("Rooster Crow.mp3").play();
+  audio.volume = 0.5;
+  }
+  
+  if (new Date().getMinutes() > 20 && new Date().getMinutes() <= 39){
+  await waitUntil(() => new Date().getMinutes() === 39)
+  await waitUntil(() => new Date().getSeconds() === 54)
+	new Audio("Rooster Crow.mp3").play();
+  audio.volume = 0.5;
+  }
+
+  if (new Date().getMinutes() > 40 && new Date().getMinutes() <= 59){
+  await waitUntil(() => new Date().getMinutes() === 59)
+  await waitUntil(() => new Date().getSeconds() === 54)
+	new Audio("Rooster Crow.mp3").play();
+  audio.volume = 0.5;
+  }
+
+  special();
+
+}
+}
 
 	</script>
 
