@@ -52,9 +52,18 @@
       mixBut.removeEventListener("click", Start);
       mixBut.addEventListener("click", Stop);
       mixBut.value = "Stop";
-      special();
-      special1();
-      special2();
+      if (new Date().getMinutes() <= 19 ){
+        special();
+      }
+
+      if (new Date().getMinutes() >= 20 && new Date().getMinutes() <= 40  ){
+        special1();
+      }
+
+      if (new Date().getMinutes() >= 41 && new Date().getMinutes() <= 59 ){
+        special2();
+      }
+      
       await waitUntil(() => new Date().getSeconds() === 28)
       console.log("interval set");
       window.clearInterval(myInterval);
