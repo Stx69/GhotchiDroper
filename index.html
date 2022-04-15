@@ -100,11 +100,10 @@
         await waitUntil(() => new Date().getSeconds() === 54)
         let eventAudio = new Audio("Rooster Crow.mp3").play();
         eventAudio.volume = 0.5;
-        await waitUntil(() => new Date().getMinutes() === 20)
         await waitUntil(() => new Date().getSeconds() === 24)
         eventAudio = new Audio("Rooster Crow.mp3").play();
         eventAudio.volume = 0.7;
-        special()
+        special1()
       }
     }
 
@@ -114,12 +113,11 @@
         await waitUntil(() => new Date().getSeconds() === 54)
         let eventAudio = new Audio("Rooster Crow.mp3").play();
         eventAudio.volume = 0.5;
-        await waitUntil(() => new Date().getMinutes() === 40)
         await waitUntil(() => new Date().getSeconds() === 24)
         eventAudio = new Audio("Rooster Crow.mp3").play();
         eventAudio.volume = 0.7;
         await new Promise(r => setTimeout(r, 10000));
-        special1()
+        special2()
       }
     }
 
@@ -129,12 +127,11 @@
         await waitUntil(() => new Date().getSeconds() === 54)
         let eventAudio = new Audio("Rooster Crow.mp3").play();
         eventAudio.volume = 0.5;
-        await waitUntil(() => new Date().getMinutes() === 0)
         await waitUntil(() => new Date().getSeconds() === 24)
         eventAudio = new Audio("Rooster Crow.mp3").play();
         eventAudio.volume = 0.7;
         await new Promise(r => setTimeout(r, 10000));
-        special2()
+        special()
       }
     }
 
